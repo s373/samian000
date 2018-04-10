@@ -124,7 +124,7 @@ void loop() {
 	                                  }
 
 
-        if (comma >= 0) {
+		if (comma >= 0) {
 
                 for (int i = 0; i < 3; i++) {
                     int el = (comma + 1 + i) % 4;
@@ -163,7 +163,7 @@ void establishcontact() { int t = 0;
     delay(100);
   }
   Serial.print("samian rx: ");
-  while (Serial.available() > 0) { Serial.print(Serial.read()); }
-  Serial.println(); for(int i=0; i<21; i++)Serial.print(samian[i]);
-  Serial.println(); readhead = 0;
+  while (Serial.available() > 0) { Serial.write(Serial.read()); }
+  Serial.write(10); for(int i=0; i<21; i++)Serial.write(samian[i]);
+  Serial.write(10); readhead = 0;
 }
